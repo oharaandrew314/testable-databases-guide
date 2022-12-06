@@ -6,31 +6,18 @@ import io.kotest.matchers.shouldBe
 import org.junit.jupiter.api.Test
 import java.util.UUID
 
-private val owner1 = UUID.randomUUID()
-private val owner2 = UUID.randomUUID()
+private val ownerId = UUID.randomUUID()
 
 private val kratos = Cat(
     id = UUID.randomUUID(),
-    ownerId = owner1,
+    ownerId = ownerId,
     name = "Kratos"
 )
 
 private val athena = Cat(
     id = UUID.randomUUID(),
-    ownerId = owner1,
+    ownerId = ownerId,
     name = "Athena"
-)
-
-private val smokie = Cat(
-    id = UUID.randomUUID(),
-    ownerId = owner2,
-    name = "Smokie"
-)
-
-private val bandit = Cat(
-    id = UUID.randomUUID(),
-    ownerId = owner2,
-    name = "Bandit"
 )
 
 abstract class CatsRepoContract(private val repo: CatsRepo) {
@@ -38,8 +25,6 @@ abstract class CatsRepoContract(private val repo: CatsRepo) {
     init {
         repo += kratos
         repo += athena
-        repo += smokie
-        repo += bandit
     }
 
     @Test
@@ -59,7 +44,7 @@ abstract class CatsRepoContract(private val repo: CatsRepo) {
 
     @Test
     fun `list for owner`() {
-        repo.listForOwner(owner1).shouldContainExactlyInAnyOrder(kratos, athena)
+        repo.listForOwner(ownerId).shouldContainExactlyInAnyOrder(kratos, athena)
     }
 
     @Test
