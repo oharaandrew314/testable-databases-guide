@@ -1,7 +1,5 @@
 package com.aohara.testdb
 
-import com.aohara.testb.DynamoCat
-import com.aohara.testb.V2DynamoCatsRepo
 import io.andrewohara.awsmock.dynamodb.MockDynamoDbV2
 import io.andrewohara.dynamokt.DataClassTableSchema
 import io.andrewohara.dynamokt.createTableWithIndices

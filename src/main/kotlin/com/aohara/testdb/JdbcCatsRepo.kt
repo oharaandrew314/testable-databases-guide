@@ -1,4 +1,4 @@
-package com.aohara.testb
+package com.aohara.testdb
 
 import java.sql.ResultSet
 import java.util.UUID

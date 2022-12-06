@@ -1,4 +1,4 @@
-package com.aohara.testb
+package com.aohara.testdb
 
 import org.jetbrains.exposed.dao.id.UUIDTable
 import org.jetbrains.exposed.sql.Database

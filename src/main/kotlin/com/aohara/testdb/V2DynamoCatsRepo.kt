@@ -1,4 +1,4 @@
-package com.aohara.testb
+package com.aohara.testdb
 
 import io.andrewohara.dynamokt.DynamoKtPartitionKey
 import io.andrewohara.dynamokt.DynamoKtSecondaryPartitionKey

@@ -1,7 +1,5 @@
 package com.aohara.testdb
 
-import com.aohara.testb.CatsTable
-import com.aohara.testb.ExposedCatsRepo
 import org.h2.jdbcx.JdbcDataSource
 import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.SchemaUtils

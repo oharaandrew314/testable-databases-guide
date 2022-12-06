@@ -1,4 +1,4 @@
-package com.aohara.testb
+package com.aohara.testdb
 
 import org.http4k.connect.amazon.dynamodb.mapper.DynamoDbTableMapper
 import org.http4k.connect.amazon.dynamodb.mapper.DynamoDbTableMapperSchema

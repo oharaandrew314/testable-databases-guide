@@ -1,7 +1,5 @@
 package com.aohara.testdb
 
-import com.aohara.testb.Cat
-import com.aohara.testb.CatsRepo
 import io.kotest.matchers.collections.shouldBeEmpty
 import io.kotest.matchers.collections.shouldContainExactlyInAnyOrder
 import io.kotest.matchers.shouldBe

@@ -1,7 +1,5 @@
 package com.aohara.testdb
 
-import com.aohara.testb.Cat
-import com.aohara.testb.Http4kDynamoCatsRepo
 import org.http4k.connect.amazon.dynamodb.FakeDynamoDb
 import org.http4k.connect.amazon.dynamodb.mapper.tableMapper
 import org.http4k.connect.amazon.dynamodb.model.TableName

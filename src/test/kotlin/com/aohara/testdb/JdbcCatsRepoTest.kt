@@ -1,6 +1,5 @@
 package com.aohara.testdb
 
-import com.aohara.testb.JdbcCatsRepo
 import org.h2.jdbcx.JdbcDataSource
 import java.util.UUID
 import javax.sql.DataSource
