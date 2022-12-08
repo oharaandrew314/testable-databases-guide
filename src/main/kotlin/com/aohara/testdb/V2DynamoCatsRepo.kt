@@ -1,8 +1,10 @@
 package com.aohara.testdb
 
+import io.andrewohara.dynamokt.DataClassTableSchema
 import io.andrewohara.dynamokt.DynamoKtPartitionKey
 import io.andrewohara.dynamokt.DynamoKtSecondaryPartitionKey
 import io.andrewohara.dynamokt.DynamoKtSecondarySortKey
+import software.amazon.awssdk.enhanced.dynamodb.DynamoDbEnhancedClient
 import software.amazon.awssdk.enhanced.dynamodb.DynamoDbTable
 import software.amazon.awssdk.enhanced.dynamodb.Key
 import software.amazon.awssdk.enhanced.dynamodb.model.QueryConditional
@@ -50,3 +52,11 @@ data class DynamoCat(
 
 private fun DynamoCat.toCat() = Cat(id = id, ownerId = ownerId, name = name)
 private fun Cat.toDynamo() = DynamoCat(id = id, ownerId = ownerId, name = name)
+
+fun main() {
+    val repository = DynamoDbEnhancedClient.create()
+        .table(System.getenv("TABLE_NAME"), DataClassTableSchema(DynamoCat::class))
+        .let { V2DynamoCatsRepo(it) }
+
+    // do stuff
+}

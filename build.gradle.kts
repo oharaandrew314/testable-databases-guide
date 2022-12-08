@@ -14,6 +14,7 @@ dependencies {
     implementation("org.http4k:http4k-connect-amazon-dynamodb")
     implementation("com.github.oharaandrew314:dynamodb-kotlin-module:0.2.0")
     implementation("software.amazon.awssdk:dynamodb-enhanced:2.18.24")
+    implementation("mysql:mysql-connector-java:8.0.30")
 
     testImplementation(kotlin("test"))
     testImplementation("com.h2database:h2:2.1.214")

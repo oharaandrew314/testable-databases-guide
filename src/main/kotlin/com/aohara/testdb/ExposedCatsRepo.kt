@@ -1,5 +1,6 @@
 package com.aohara.testdb
 
+import com.mysql.cj.jdbc.MysqlDataSource
 import org.jetbrains.exposed.dao.id.UUIDTable
 import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.ResultRow
@@ -50,4 +51,17 @@ class ExposedCatsRepo(private val database: Database): CatsRepo {
         ownerId = this[CatsTable.ownerId],
         name = this[CatsTable.name]
     )
+}
+
+fun main() {
+    val dataSource = MysqlDataSource().apply {
+        databaseName = System.getenv("DB_NAME")
+        serverName = System.getenv("DB_HOST")
+        user = System.getenv("DB_USER")
+        password = System.getenv("DB_PASS")
+    }
+
+    val database = Database.connect(dataSource)
+    val repository = ExposedCatsRepo(database)
+    // do stuff
 }

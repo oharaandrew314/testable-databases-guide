@@ -1,5 +1,6 @@
 package com.aohara.testdb
 
+import com.mysql.cj.jdbc.MysqlDataSource
 import java.sql.ResultSet
 import java.util.UUID
 import javax.sql.DataSource
@@ -63,4 +64,16 @@ class JdbcCatsRepo(private val datasource: DataSource): CatsRepo {
         ownerId = UUID.fromString(getString("ownerId")),
         name = getString("name")
     )
+}
+
+fun main() {
+    val dataSource = MysqlDataSource().apply {
+        databaseName = System.getenv("DB_NAME")
+        serverName = System.getenv("DB_HOST")
+        user = System.getenv("DB_USER")
+        password = System.getenv("DB_PASS")
+    }
+
+    val repository = JdbcCatsRepo(dataSource)
+    // do stuff
 }
